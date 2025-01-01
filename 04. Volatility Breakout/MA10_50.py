@@ -1,3 +1,5 @@
+#결론 2017.10.03 ~ 2024.11.26 일봉 88.9%
+
 # main.py
 import pandas as pd
 import backtrader as bt
