@@ -4,7 +4,7 @@
 
 ## 📌 Project Overview
 
-  여러 전통적인 거래 전략들을 프로그래밍하고, **Python 라이브러리인 Backtrader**를 이용해 백테스트를 진행하였음. 또한, **LSTM (Long Short-Term Memory)**과 **GRU (Gated Recurrent Units)**와 같은 머신러닝 모델을 사용하여 가격 변동 예측을 진행하였고, 그 성능을 평가하여 실제 거래에 적용할 수 있는지에 대한 가능성을 연구하였음.
+-여러 전통적인 거래 전략들을 프로그래밍하고, **Python 라이브러리인 Backtrader**를 이용해 백테스트를 진행하였음. 또한, **LSTM (Long Short-Term Memory)**과 **GRU (Gated Recurrent Units)**와 같은 머신러닝 모델을 사용하여 가격 변동 예측을 진행하였고, 그 성능을 평가하여 실제 거래에 적용할 수 있는지에 대한 가능성을 연구하였음.
 
 최종적으로는 **UPbit API**를 통해 실시간 거래에 이 전략들을 연동하고 자동매매를 실현하는 것이 목표.
 
