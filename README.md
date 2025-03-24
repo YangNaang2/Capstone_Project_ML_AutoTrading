@@ -1,5 +1,5 @@
 <p align="center" style="font-size: 32px; font-weight: bold;">
-<< *Capstone Project* >>
+<< Capstone Project >>
 </p>
 
 ## Machine Learning for Automated Trading (UPbit)
