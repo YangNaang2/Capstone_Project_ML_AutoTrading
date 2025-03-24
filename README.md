@@ -4,78 +4,72 @@
 
 ## 📌 Project Overview
 
-This project focuses on implementing and optimizing **automated trading strategies** using **UpBit API**. Several traditional strategies are programmed and then backtested using the Python library **Backtrader** to assess their effectiveness. Additionally, machine learning models such as **LSTM (Long Short-Term Memory)** and **GRU (Gated Recurrent Units)** are used to predict price movements, with performance evaluations to determine their viability for trading.
+## 📌 프로젝트 개요
 
-The ultimate goal is to integrate the strategies with the UpBit API for real-time automated trading.
+이 프로젝트는 **UpBit API**를 활용하여 **자동화된 거래 전략**을 구현하고 최적화하는 데 중점을 둡니다. 여러 전통적인 거래 전략들을 프로그래밍하고, **Python 라이브러리인 Backtrader**를 이용해 백테스트를 통해 전략의 유효성을 평가합니다. 또한, **LSTM (Long Short-Term Memory)**과 **GRU (Gated Recurrent Units)**와 같은 머신러닝 모델을 사용하여 가격 변동 예측을 시도하고, 그 성능을 평가하여 실제 거래에 적용할 수 있는 가능성을 탐구합니다.
 
----
-
-## 🔧 Technologies Used
-
-- **Python**: Core programming language
-- **UpBit API**: For integrating with the cryptocurrency exchange
-- **Backtrader**: For backtesting trading strategies
-- **LSTM**: A type of recurrent neural network for time-series predictions
-- **GRU**: A variant of LSTM used for training on time-series data
-- **TensorFlow**: For implementing LSTM/GRU models
-- **Pandas**, **NumPy**, **Matplotlib**: For data manipulation and visualization
+최종적으로는 **UpBit API**를 통해 실시간 거래에 이 전략들을 연동하고 자동매매를 실현하는 것이 목표입니다.
 
 ---
 
-## ⚙️ Features
+## 🔧 사용된 기술
 
-1. **Automated Trading**  
-   - Integration with **UpBit API** for real-time market data and trading execution.
-
-2. **Backtesting**  
-   - Backtest multiple traditional trading strategies using **Backtrader** to evaluate their performance in historical data.
-
-3. **Machine Learning Models**  
-   - **LSTM** and **GRU** models to predict cryptocurrency price trends.
-   - Evaluation of model performance and adjustment of hyperparameters.
-
-4. **Real-Time Trading**  
-   - Utilize the optimized strategies to execute live trades through the UpBit API.
+- **Python**: 핵심 프로그래밍 언어
+- **UpBit API**: 암호화폐 거래소와 연동하기 위해 사용
+- **Backtrader**: 거래 전략 백테스팅을 위한 라이브러리
+- **LSTM**: 시계열 예측을 위한 순환 신경망 모델
+- **GRU**: LSTM의 변형 모델로 시계열 데이터를 학습
+- **TensorFlow**: LSTM/GRU 모델 구현을 위한 라이브러리
+- **Pandas**, **NumPy**, **Matplotlib**: 데이터 처리 및 시각화
 
 ---
 
-## 🚀 Project Workflow
+## ⚙️ 주요 기능
 
-1. **Data Collection**  
-   - Fetch historical price data using the **UpBit API**.
-   - Clean and preprocess the data for use in machine learning models and backtesting.
+1. **자동화 거래**  
+   - **UpBit API**와 연동하여 실시간 시장 데이터와 거래 실행을 처리.
 
-2. **Strategy Implementation**  
-   - Implement traditional trading strategies such as **Moving Averages**, **RSI**, etc.
-   - Code various machine learning models like **LSTM** and **GRU** to predict price movements.
+2. **백테스팅**  
+   - **Backtrader**를 사용해 여러 전통적인 거래 전략들을 백테스트하여 전략의 효율성을 평가.
 
-3. **Backtesting**  
-   - Evaluate the effectiveness of each strategy through **Backtrader** by testing them on historical data.
+3. **머신러닝 모델**  
+   - **LSTM**과 **GRU** 모델을 활용하여 암호화폐 가격의 변동을 예측.
+   - 모델 성능 평가 및 하이퍼파라미터 조정을 통한 최적화.
 
-4. **Model Training**  
-   - Train the machine learning models using price data to forecast future trends and market directions.
-
-5. **Real-Time Execution**  
-   - Integrate the best-performing strategies with the UpBit API for **live trading**.
+4. **실시간 거래**  
+   - 백테스트에서 성과가 좋은 전략을 **UpBit API**와 연동하여 실시간으로 자동매매 실행.
 
 ---
 
-## 📈 Results & Evaluation
+## 🚀 프로젝트 흐름
 
-- **Backtesting Performance**  
-  Evaluate the strategies based on key metrics like **Profit Factor**, **Sharpe Ratio**, and **Max Drawdown**.
-  
-- **Model Accuracy**  
-  Measure the accuracy of machine learning models with metrics such as **Directional Accuracy**, **Mean Squared Error**, and **Theil's U-statistic**.
+- **2023년 10월**: **전략 공부**  
+  - 전통적인 거래 전략에 대한 연구를 통해 전략의 기초를 다집니다.
 
-- **Real-Time Results**  
-  Track the success rate of the trading bot using live market data and monitor its performance over time.
+- **2023년 11월**: **Backtrader 공부**  
+  - **Backtrader** 라이브러리를 학습하고, 이를 활용한 백테스팅 방법을 익힙니다.
+
+- **2024년 1월**: **사용할 전략 선택**  
+  - 여러 전략을 분석하여 최종적으로 사용할 전략을 선택하고, 해당 전략들을 구현할 준비를 합니다.
+
+- **2024년 2월**: **여러 전략 구현 및 웹사이트 개설**  
+  - 다양한 전략들을 코드로 구현하고, 전략을 실시간으로 적용할 수 있도록 웹사이트를 개설하여 관리합니다.
+
+- **2024년 3월**: **GRU, LSTM 구현화**  
+  - **GRU**와 **LSTM** 모델을 구현하여 암호화폐 가격 예측을 위한 모델을 학습하고 테스트합니다.
 
 ---
 
-## 📝 Requirements
+## 📈 결과 및 평가
 
-Before running the code, install the required libraries:
+- **백테스팅 성과**  
+  각 전략은 백테스트를 통해 실제 수익률을 바탕으로 평가되었습니다. 전략들이 얼마나 효과적인지 **Profit Factor**, **Sharpe Ratio**, **Max Drawdown** 등을 기준으로 수익률을 계산하고, 전략의 유효성을 분석했습니다.
 
-```bash
-pip install -r requirements.txt
+- **모델 정확도**  
+  **Directional Accuracy**, **Mean Squared Error**, **Theil's U-statistic** 등을 활용하여 머신러닝 모델의 성능을 평가했습니다. **GRU**와 **LSTM** 모델을 통해 예측 정확도를 높이고, 최적의 예측 성능을 찾기 위한 하이퍼파라미터 튜닝을 진행했습니다.
+
+- **실시간 성과**  
+  실시간 거래에서 전략을 적용한 결과, 예상된 방향으로 가격 변동을 예측할 수 있었는지에 대한 성과를 추적하고 분석했습니다.
+
+---
+
