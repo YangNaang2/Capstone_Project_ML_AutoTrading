@@ -1,4 +1,6 @@
-# Capstone Project: Machine Learning for Automated Trading (UPbit)
+# Capstone Project
+
+## Machine Learning for Automated Trading (UPbit)
 
 **2024 Fall & 2025 Spring**
 
