@@ -1,6 +1,4 @@
-<p align="center" style="font-size: 64px; font-weight: bold;">
-<strong><< Capstone Project >><strong>
-</p>
+# Capstone Project:
 
 ## Machine Learning for Automated Trading (UPbit)
 
