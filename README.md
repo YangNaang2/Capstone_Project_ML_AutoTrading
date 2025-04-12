@@ -1,33 +1,7 @@
 # Capstone Project:
 
 ## Machine Learning for Automated Trading (UPbit)
-## 📁 프로젝트 최종 코드 구성
 
-ST/
-├── 핵심 모듈
-│   ├── main.py (메인 실행 파일)
-│   ├── strategy.py (거래 전략 구현)
-│   ├── trade.py (거래 실행)
-│   ├── tracker.py (거래 추적)
-│   └── utils.py (유틸리티 함수)
-│
-├── 설정 및 환경
-│   ├── config.py (설정 파일)
-│   ├── .env (환경 변수)
-│   └── requirements.txt (의존성 패키지)
-│
-├── 로깅 및 알림
-│   ├── logger.py (로깅 시스템)
-│   ├── notifier.py (알림 시스템)
-│   ├── notify.py (알림 유틸리티)
-│   └── logs/ (로그 파일 저장)
-│
-├── 데이터
-│   ├── dataset.csv (기본 데이터셋)
-│   └── saved_data.csv (저장된 거래 데이터)
-│
-└── 문서
-    └── 설명서.txt (프로젝트 설명)
 **2024 Fall & 2025 Spring**
 
 ## 📌 Project Overview
