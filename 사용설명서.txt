@@ -1,0 +1,40 @@
+📄 기본 사용 설명서
+
+0. 공통 설정
+.env 파일에서 아래 환경 변수들을 수정하세요:
+
+- UPBIT_ACCESS_KEY : 업비트 API 키
+- UPBIT_SECRET_KEY : 업비트 시크릿 키
+- BOT_TOKEN : 텔레그램 봇 토큰
+- CHAT_ID : 텔레그램 채팅 ID
+
+참고 자료:
+- https://mcc96.tistory.com/24
+- https://i-whale.com/entry/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8-%EB%B4%87-%EC%83%9D%EC%84%B1-Token-%EB%B0%8F-Chat-ID-%ED%99%95%EC%9D%B8-%EB%B0%A9%EB%B2%95
+
+--------------------------------------------------
+
+1. 로컬 실행
+
+1-1. cmd 또는 터미널에서 아래 명령어 실행:
+    python main.py
+
+--------------------------------------------------
+
+2. 웹 실행
+
+2-1. 디렉토리 이동:
+    cd trading_web
+
+2-2. 웹 서버 실행:
+    python app.py
+
+--------------------------------------------------
+
+⚙️ 설정 변경 가능 항목 (config.py)
+
+- TRADING_AMOUNT
+  → 매수 금액을 변경할 수 있습니다.
+
+- STOP_LOSS_PERCENT
+  → 손절 기준 퍼센트를 조정할 수 있습니다.
