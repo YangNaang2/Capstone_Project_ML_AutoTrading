@@ -45,53 +45,66 @@ cerebro.broker.set_coc(True)  # 종가 진입
 
 # 데이터 피드 추가
 cerebro.adddata(data_feed, name="BTC")
-                
-class MACDCrossoverStrategy(bt.Strategy):
+class MACD_DEMA_Strategy(bt.Strategy):
     params = (
-        ('fast_length', 8),
-        ('slow_length', 16),
-        ('signal_length', 11),
+        ('fast_length', 12),
+        ('slow_length', 26),
+        ('signal_length', 9),
     )
 
     def __init__(self):
-        fast_ema = bt.ind.EMA(self.data.close, period=self.p.fast_length)
-        slow_ema = bt.ind.EMA(self.data.close, period=self.p.slow_length)
-        self.macd = fast_ema - slow_ema
-        self.signal = bt.ind.SMA(self.macd, period=self.p.signal_length)
+        close = self.data.close
+
+        # 빠른 DEMA = 2 * EMA - EMA(EMA)
+        ema_fast = bt.ind.EMA(close, period=self.p.fast_length)
+        ema_fast2 = bt.ind.EMA(ema_fast, period=self.p.fast_length)
+        self.dema_fast = (2 * ema_fast) - ema_fast2
+
+        # 느린 DEMA
+        ema_slow = bt.ind.EMA(close, period=self.p.slow_length)
+        ema_slow2 = bt.ind.EMA(ema_slow, period=self.p.slow_length)
+        self.dema_slow = (2 * ema_slow) - ema_slow2
+
+        # MACD Zero Lag = DEMA_fast - DEMA_slow
+        self.ligne_macd = self.dema_fast - self.dema_slow
+
+        # Signal DEMA
+        ema_sig = bt.ind.EMA(self.ligne_macd, period=self.p.signal_length)
+        ema_sig2 = bt.ind.EMA(ema_sig, period=self.p.signal_length)
+        self.ligne_signal = (2 * ema_sig) - ema_sig2
+
+        # Histogram
+        self.macd_zero_lag = self.ligne_macd - self.ligne_signal
+
         self.logs = []
 
     def next(self):
-        prev_macd = self.macd[-1]
-        curr_macd = self.macd[0]
-        prev_signal = self.signal[-1]
-        curr_signal = self.signal[0]
+        prev = self.macd_zero_lag[-1]
+        curr = self.macd_zero_lag[0]
 
-        # MACD가 시그널을 상향 돌파 → 매수
-        if prev_macd < prev_signal and curr_macd > curr_signal and not self.position:
+        # 매수 조건: 0선 상향 돌파
+        if prev < 0 and curr > 0 and not self.position:
             self.buy()
-            self.log(f"BUY: MACD crossed above Signal → MACD: {curr_macd:.4f}, Signal: {curr_signal:.4f}")
+            self.log(f"BUY: MACD_DEMA crossed above 0 → {curr:.4f}")
 
-        # MACD가 시그널을 하향 돌파 → 청산
-        elif prev_macd > prev_signal and curr_macd < curr_signal and self.position:
+        # 매도 조건: 0선 하향 돌파
+        elif prev > 0 and curr < 0 and self.position:
             self.close()
-            self.log(f"SELL: MACD crossed below Signal → MACD: {curr_macd:.4f}, Signal: {curr_signal:.4f}")
+            self.log(f"SELL: MACD_DEMA crossed below 0 → {curr:.4f}")
 
     def log(self, txt, dt=None):
-        dt = dt or self.datas[0].datetime.date(0)
-        log_entry = f"{dt.isoformat()} {txt}"
-        print(log_entry)
+        dt = dt or self.data.datetime.date(0)
+        print(f"{dt.isoformat()} {txt}")
         self.logs.append({'datetime': dt, 'log': txt})
 
     def stop(self):
         log_dir = "./log_dir"
-        if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
-        filename = "macd_crossover_log.csv"
-        df_logs = pd.DataFrame(self.logs)
-        df_logs.to_csv(os.path.join(log_dir, filename), index=False)
-        print(f"Trading log saved: {filename}")
+        os.makedirs(log_dir, exist_ok=True)
+        df = pd.DataFrame(self.logs)
+        df.to_csv(os.path.join(log_dir, "macd_dema_log.csv"), index=False)
+        print(" Trading log saved.")
 
-cerebro.addstrategy(MACDCrossoverStrategy)
+cerebro.addstrategy(MACD_DEMA_Strategy)
 # PyFolio 분석기 추가
 cerebro.addanalyzer(bt.analyzers.PyFolio, _name='pyfolio')
 
@@ -113,9 +126,9 @@ qs.plots.snapshot(returns)
 results_dir = "./results"
 if not os.path.exists(results_dir):
     os.makedirs(results_dir)
-report_filename = f"{results_dir}/MACD_Crossover_{int(time.time())}.html"
+report_filename = f"{results_dir}/MACD_DEMA_{int(time.time())}.html"
 qs.reports.html(returns, output=report_filename,
                 download_filename=report_filename,
-                title="MACD_Crossover")
+                title="MACD_DEMA")
 print(f"\nReport generated: {report_filename}")
 print("Complete")
