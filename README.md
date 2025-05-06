@@ -1,4 +1,4 @@
-!(https://github.com/YangNaang2/Capstone_Project_ML_AutoTrading/blob/main/Final_Code/screencapture-file-C-Users-Desktop-index-html-2025-05-06-14_25_30.png)
+![](https://github.com/YangNaang2/Capstone_Project_ML_AutoTrading/blob/main/Final_Code/screencapture-file-C-Users-Desktop-index-html-2025-05-06-14_25_30.png)
 
 # Capstone Project:
 
