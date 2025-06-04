@@ -4,7 +4,7 @@
 
 ## 머신러닝을 이용한 암호화폐 변동성 예측과 Automated Trading System (UPbit)
 
-**2024 Fall & 2025 Spring**
+**2024 Fall & 2025 Spring Semester**
 
 ## 📌 Project Overview
 
