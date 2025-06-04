@@ -3,7 +3,7 @@
 # 🏆 2025년도 소프트웨어융합대학 캡스톤 FAIR **최우수상 (2위)** 수상
 
 ## 머신러닝을 이용한 암호화폐 변동성 예측과 Automated Trading System (UPbit)
-
+## 산학캡스톤 with koscom(한국증권전산)
 **2024 Fall & 2025 Spring Semester**
 
 ## 📌 Project Overview
