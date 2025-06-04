@@ -1,6 +1,5 @@
 ![](https://github.com/YangNaang2/Capstone_Project_ML_AutoTrading/blob/main/Final_Code/screencapture-file-C-Users-Desktop-index-html-2025-05-06-14_25_30.png)
 
-# Capstone Project:
 # 🏆 2025년도 소프트웨어융합대학 캡스톤 FAIR **최우수상 (2위)** 수상
 
 ## 머신러닝을 이용한 암호화폐 변동성 예측과 Automated Trading System (UPbit)
